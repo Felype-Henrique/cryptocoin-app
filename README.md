@@ -1,1 +1,0 @@
-# cryptocoin-app
