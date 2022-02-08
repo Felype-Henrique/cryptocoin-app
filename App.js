@@ -8,6 +8,9 @@ export default function App() {
       <View style={styles.titleWrapper}>
       <Text style={styles.largeTitle}>Mercado Cripto</Text>
       </View>
+      <View style={styles.divider}>
+
+      </View>
     </View>
   );
 }
@@ -25,4 +28,10 @@ const styles = StyleSheet.create({
     marginTop: 80,
     paddingHorizontal: 16,
   },
+  divider: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: '#A9ABB1',
+    marginHorizontal: 16,
+    marginTop: 16, 
+  }
 });
