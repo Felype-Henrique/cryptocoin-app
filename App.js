@@ -4,19 +4,18 @@ import ListItem from "./components/ListItem";
 
 import { SAMPLE_DATA } from "./assets/data/sampleData";
 
-const ListHeader = () => {
+const ListHeader = () => (
   <>
   <View style={styles.titleWrapper}>
   <Text style={styles.largeTitle}>Mercado Cripto</Text>
   </View>
   <View style={styles.divider} />
   </>
-}
+)
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-
       <FlatList
         keyExtractor={(item) => item.id}
         data={SAMPLE_DATA}
@@ -29,9 +28,9 @@ export default function App() {
             logoUrl={item.image}
           />
         )}
-        ListHeaderComponent={<ListHeader/>}
+        ListHeaderComponent={<ListHeader />}
       />
-    </SafeAreaView>
+      </SafeAreaView>
   );
 }
 
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   titleWrapper: {
-    marginTop: 20,
+    marginTop: 40,
     paddingHorizontal: 16,
   },
   divider: {
