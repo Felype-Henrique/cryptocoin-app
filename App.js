@@ -1,6 +1,11 @@
-import React from "react";
+import React, {useRef, useMemo} from "react";
 import { FlatList, StyleSheet, Text, View, SafeAreaView } from "react-native";
 import ListItem from "./components/ListItem";
+
+import {
+  BottomSheetModal,
+  BottomSheetModalProvider
+} from '@gorhom/bottom-sheet'
 
 import { SAMPLE_DATA } from "./assets/data/sampleData";
 
@@ -14,7 +19,12 @@ const ListHeader = () => (
 )
 
 export default function App() {
+  const bottomSheetModalRef = useRef(null);
+  const snapPoints = useMemo(() => ['50%'], []);
+
+
   return (
+    <BottomSheetModalProvider>
     <SafeAreaView style={styles.container}>
       <FlatList
         keyExtractor={(item) => item.id}
@@ -31,6 +41,17 @@ export default function App() {
         ListHeaderComponent={<ListHeader />}
       />
       </SafeAreaView>
+
+      <BottomSheetModal
+      ref={bottomSheetModalRef}
+      index={0}
+      snapPoints={snapPoints}
+      >
+        <View>
+          <Text>Bem vindo</Text>
+        </View>
+      </BottomSheetModal>
+      </BottomSheetModalProvider>
   );
 }
 
